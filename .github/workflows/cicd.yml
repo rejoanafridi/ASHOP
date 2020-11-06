@@ -29,7 +29,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: rejoanafridi/ASHOP
+        image: rejoanafridi/ashop
         registry: docker.io
         tag: latest
         username: ${{ secrets.DOCKER_USERNAME }}
