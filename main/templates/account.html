@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+
+<title>Account - A-Shop| Ecommerce</title>
+{% endblock %} {% block body %}
+<!-- header section start -->
+
+{% include 'partials/navbar.html' %}
+
+<!-- ---------Account Page --------- -->
+
+<div class="account-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<img src="images/image1.png" width="100%" />
+			</div>
+			<div class="col-2">
+				<div class="form-container">
+					<div class="form-btn">
+						<span onclick="login()">Login</span>
+						<span onclick="register()">Register</span>
+						<hr id="Indicator" />
+					</div>
+					<form id="loginForm">
+						<input type="text" placeholder="username" />
+						<input type="text" placeholder="Email" />
+						<input type="password" placeholder="password" />
+						<button type="submit" class="btn">Login</button>
+					</form>
+
+					<form id="RegForm">
+						<input type="text" placeholder="username" />
+						<input type="text" placeholder="Email" />
+						<input type="password" placeholder="password" />
+						<button type="submit" class="btn">Register</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Footer-->
+{% include 'partials/footer.html' %} 
+
+{% endblock %} 
+
+{% block scripts %}
+
+<!-- -------js for Toggle Form -->
+<script>
+	var loginForm = document.getElementById("loginForm");
+	var RegForm = document.getElementById("RegForm");
+	var Indicator = document.getElementById("Indicator");
+
+	function register() {
+		RegForm.style.transform = "translateX(0px)";
+		loginForm.style.transform = "translateX(0px)";
+		Indicator.style.transform = "translateX(100px)";
+	}
+	function login() {
+		RegForm.style.transform = "translateX(300px)";
+		loginForm.style.transform = "translateX(300px)";
+		Indicator.style.transform = "translateX(0px)";
+	}
+</script>
+
+{% endblock scripts %}

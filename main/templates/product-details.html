@@ -1,0 +1,185 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block meta %}
+		<title>ALL Products- A-Shop | Ecommerce</title>
+
+{% endblock %} 
+{% block body %}
+
+		<!-- header section start -->
+
+		<div class="container">
+			<div class="navbar">
+				<div class="logo">
+					<img src="./images/logo.png" alt="redstore" width="195px" />
+				</div>
+				<nav>
+					<ul id="menuItems">
+						<li><a href="#"> Home </a></li>
+						<li><a href="#"> Product</a></li>
+						<li><a href="#"> About </a></li>
+						<li><a href="#"> Contact</a></li>
+						<li><a href="#"> Account</a></li>
+					</ul>
+				</nav>
+				<img src="images/cart.png" alt="" width="30px" height="30px" />
+				<img src="images/menu.png" class="menu-icon" onclick="manutoggle()" />
+			</div>
+		</div>
+
+		<!-- -------------------Single product details ----------- -->
+		<div class="small-container single-product">
+			<div class="row">
+				<div class="col-2">
+					<img src="images/gallery-1.jpg" width="100%" alt="" id="productimg" />
+
+					<div class="small-img-row">
+						<div class="small-img-col">
+							<img
+								src="images/gallery-1.jpg"
+								width="100%"
+								alt=""
+								class="small-Img"
+							/>
+						</div>
+						<div class="small-img-col">
+							<img
+								src="images/gallery-2.jpg"
+								width="100%"
+								alt=""
+								class="small-Img"
+							/>
+						</div>
+						<div class="small-img-col">
+							<img
+								src="images/gallery-3.jpg"
+								width="100%"
+								alt=""
+								class="small-Img"
+							/>
+						</div>
+						<div class="small-img-col">
+							<img
+								src="images/gallery-4.jpg"
+								width="100%"
+								alt=""
+								class="small-Img"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="col-2">
+					<p>Home / T-Shirt</p>
+					<h1>Red Printed T-Shirt</h1>
+					<h4>50.00$</h4>
+					<select name="" id="">
+						<option value="">Select Size</option>
+						<option value="">XXL</option>
+						<option value="">XL</option>
+						<option value="">Medium</option>
+						<option value="">Large</option>
+						<option value="">Small</option>
+					</select>
+					<input type="number" value="1" />
+					<a href="" class="btn"> Add To Cart</a>
+					<br />
+					<h3>Product Details <i class="fa fa-indent"></i></h3>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut debitis
+						vitae deserunt, repellat quisquam ab possimus voluptatem nemo ipsam
+						maiores.
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- ------Title---- -->
+		<div class="small-container">
+			<div class="row row-2">
+				<h2>Related - Products</h2>
+				<p>View More</p>
+			</div>
+		</div>
+
+		<!-- Product -->
+
+		<div class="small-container">
+			<div class="row">
+				<div class="col-4">
+					<img src="images/product-9.jpg" alt="" />
+					<h4>Red Printed T-Shirt</h4>
+					<div class="rating">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+					</div>
+					<p>$50.00</p>
+				</div>
+				<div class="col-4">
+					<img src="images/product-10.jpg" alt="" />
+					<h4>Red Printed T-Shirt</h4>
+					<div class="rating">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-half-o"></i>
+					</div>
+					<p>$50.00</p>
+				</div>
+				<div class="col-4">
+					<img src="images/product-11.jpg" alt="" />
+					<h4>Red Printed T-Shirt</h4>
+					<div class="rating">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+					</div>
+					<p>$50.00</p>
+				</div>
+				<div class="col-4">
+					<img src="images/product-12.jpg" alt="" />
+					<h4>Red Printed T-Shirt</h4>
+					<div class="rating">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-half-o"></i>
+						<i class="fa fa-star-o"></i>
+					</div>
+					<p>$50.00</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- -----------Footer----------- -->
+            {% include 'partials/footer.html' %}
+	
+
+		<!-- -----Js for product galley -->
+	
+{% endblock %}
+
+{% block script %}
+
+	<script>
+			var productimg = document.getElementById("productimg");
+			var smallImg = document.getElementsByClassName("small-Img");
+
+			smallImg[0].onclick = function () {
+				productimg.src = smallImg[0].src;
+			};
+			smallImg[1].onclick = function () {
+				productimg.src = smallImg[1].src;
+			};
+			smallImg[2].onclick = function () {
+				productimg.src = smallImg[2].src;
+			};
+			smallImg[3].onclick = function () {
+				productimg.src = smallImg[3].src;
+			};
+		</script>
+{% endblock script %}

@@ -1,0 +1,305 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block meta %}
+<title>A-Shop | Ecommerce</title>
+{% endblock %} 
+{% block body %}
+
+<!-- header section start -->
+<div class="header">
+	{% include 'partials/navbar.html' %}
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<h1>
+					Give Your Workout <br />
+					a new style!
+				</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+					Corporis culpa sunt, quia delectus nobis consectetur?
+				</p>
+				<a href="" class="btn">Explore Now &#10132;</a>
+			</div>
+			<div class="col-2">
+				<img src=" {% static ' images/image1.png' %} " alt="" />
+			</div>
+		</div>
+	</div>
+</div>
+<!-- header section end -->
+
+<!-- Features categories start -->
+<div class="categories">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-3">
+				<img src=" {% static 'images/category-1.jpg'  %}" alt="" />
+			</div>
+			<div class="col-3">
+				<img src="{% static 'images/category-2.jpg'  %} " alt="" />
+			</div>
+			<div class="col-3">
+				<img src="{% static 'images/category-3.jpg'   %} " alt="" />
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Features categories end -->
+
+<!-- Features product start -->
+<div class="small-container">
+	<h2 class="title">Featured Products</h2>
+	<div class="row">
+		<div class="col-4">
+			<img src="{% static 'images/product-1.jpg'  %}" alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-2.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-3.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-4.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+	</div>
+	<h2 class="title">Latest Products</h2>
+	<div class="row">
+		<div class="col-4">
+			<img src="{% static 'images/product-5.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-6.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-7.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-8.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-4">
+			<img src="{% static 'images/product-9.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-10.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-11.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+		<div class="col-4">
+			<img src="{% static 'images/product-12.jpg'  %} " alt="" />
+			<h4>Red Printed T-Shirt</h4>
+			<div class="rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+			</div>
+			<p>$50.00</p>
+		</div>
+	</div>
+</div>
+
+<!-- Features product end -->
+
+<!-- Offer -->
+<div class="offer">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-2">
+				<img src="{% static 'images/exclusive.png'  %} " class="offer-img" />
+			</div>
+			<div class="col-2">
+				<p>Exclusive available on RedStore</p>
+				<h1>Smart Band 4</h1>
+				<small
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+					repellat nam aspernatur iusto natus architecto!</small
+				>
+				<a class="btn" href="#">Buy Now &#8594;</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ------------------Testimonial---------- -->
+<div class="testimonial">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+					necessitatibus aperiam libero consequatur totam eveniet aliquid earum
+					sapiente commodi quae?
+				</p>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+				<img src="{% static 'images/user-1.png'  %} " />
+				<h3>Sean Parker</h3>
+			</div>
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+					necessitatibus aperiam libero consequatur totam eveniet aliquid earum
+					sapiente commodi quae?
+				</p>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+				<img src="{% static 'images/user-3.png'  %} " />
+				<h3>Harry Smith</h3>
+			</div>
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+					necessitatibus aperiam libero consequatur totam eveniet aliquid earum
+					sapiente commodi quae?
+				</p>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-half-o"></i>
+				<i class="fa fa-star-o"></i>
+				<img src="{% static 'images/user-2.png'  %} " />
+				<h3>Anas Biswas</h3>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ------------Brands------------ -->
+<div class="brands">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-5">
+				<img src="{% static 'images/logo-coca-cola.png'  %} " alt="" />
+			</div>
+			<div class="col-5">
+				<img src="{% static 'images/logo-godrej.png'  %} " alt="" />
+			</div>
+			<div class="col-5">
+				<img src="{% static 'images/logo-oppo.png'  %} " alt="" />
+			</div>
+			<div class="col-5">
+				<img src="{% static 'images/logo-paypal.png'  %} " alt="" />
+			</div>
+			<div class="col-5">
+				<img src="{% static 'images/logo-philips.png'  %} " alt="" />
+			</div>
+		</div>
+	</div>
+</div>
+<!-- -----------Footer----------- -->
+{% include 'partials/footer.html' %}
+
+{% endblock %}
