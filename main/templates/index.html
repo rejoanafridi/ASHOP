@@ -51,7 +51,7 @@
 		{% for product in product %}
 
 		<div class="col-4">
-			<a href="#">
+			<a href="{% url 'product-details' product.id %}">
 				{% if product.thumbnail %}
 				<img src="{{ product.thumbnail.url }}" alt="" />
 				{% endif %}

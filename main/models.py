@@ -4,7 +4,17 @@ from django.db.models.deletion import SET_NULL
 from django.shortcuts import render, reverse
 from django.utils.text import slugify
 
-# Create your models here.
+
+class Customer(models.Model):
+    user = models.OneToOneField(User,
+                                on_delete=models.CASCADE,
+                                null=True,
+                                blank=True)
+    name = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Exclusive(models.Model):

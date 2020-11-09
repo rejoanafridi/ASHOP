@@ -21,10 +21,19 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
-    path('account/', views.account, name='account'),
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.login, name='login'),
     path('product/', views.product, name='product'),
-    path('product-details/', views.product_details, name='product-details'),
-    path('cart', views.cart, name='cart'),
+    path('logout/', views.user_logout, name='LogOut'),
+    path('product-details/<str:pk>/',
+         views.product_details,
+         name='product-details'),
+    path('cart/', views.cart, name='cart'),
+    path('checkout/', views.checkout, name='checkOut'),
+    path('add-item/', views.add_cart_item, name='add_item'),
+    path('payment/', views.payment, name='payment'),
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

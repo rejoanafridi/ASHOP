@@ -23,16 +23,17 @@
 					</div>
 					<form id="loginForm">
 						<input type="text" placeholder="username" />
-						<input type="text" placeholder="Email" />
+						<input type="text" placeholder="Email" i />
 						<input type="password" placeholder="password" />
 						<button type="submit" class="btn">Login</button>
 					</form>
 
-					<form id="RegForm">
-						<input type="text" placeholder="username" />
-						<input type="text" placeholder="Email" />
-						<input type="password" placeholder="password" />
-						<button type="submit" class="btn">Register</button>
+					<form method="POST" id="RegForm">
+						{% csrf_token %}
+						<input type="text" placeholder="username" id="name" />
+						<input type="text" placeholder="Email" id="email" />
+						<input type="password" placeholder="password" id="password" />
+						<a type="submit" class="btn" id="submit">Register</a>
 					</form>
 				</div>
 			</div>
@@ -41,11 +42,7 @@
 </div>
 
 <!--Footer-->
-{% include 'partials/footer.html' %} 
-
-{% endblock %} 
-
-{% block scripts %}
+{% include 'partials/footer.html' %} {% endblock %} {% block scripts %}
 
 <!-- -------js for Toggle Form -->
 <script>
@@ -63,6 +60,36 @@
 		loginForm.style.transform = "translateX(300px)";
 		Indicator.style.transform = "translateX(0px)";
 	}
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+	function  account(){
+		name = document.getElementById("name").value;
+		email = document.getElementById("email").value;
+		password = document.getElementById("password").value;
+		csrfmiddlewaretoken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+
+	}
+	$.ajax({
+		type:"POST",
+		url:'/account/',
+		data:{
+			'csrfmiddlewaretoken': csrfmiddlewaretoken,
+			'iname':name,
+			'iemail':email,
+			'ipassword':password.
+		},
+		success : function(data){
+			console.log(data['message'])
+			if(data['message'] == "Success")
+				window.loaction ="/"
+
+			}
+		}
+	})
 </script>
 
 {% endblock scripts %}

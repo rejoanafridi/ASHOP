@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+
+<title>Account login - A-Shop| Ecommerce</title>
+{% endblock %} {% block body %}
+<!-- header section start -->
+
+{% include 'partials/navbar.html' %}
+
+<!-- ---------Account Page --------- -->
+
+<div class="account-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<img src="{% static 'images/image2.png' %} " width="100%" />
+			</div>
+			<div class="col-2">
+				<div class="form-container">
+					<h3>Login Here</h3>
+					<form method="POST" action="">
+						{% csrf_token %}
+
+						<input type="text" placeholder="username" name="name" />
+						<input type="text" placeholder="Email" name="email" />
+						<input type="password" placeholder="password" name="password" />
+						<input type="submit" class="btn" id="submit" />
+						<p>
+							haven't any account
+
+							<a style="color: tomato" href="{% url 'signup' %}">signup</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Footer-->
+{% include 'partials/footer.html' %} {% endblock %}

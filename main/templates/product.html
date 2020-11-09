@@ -22,9 +22,11 @@
 	<div class="row">
 		{% for product in products %} {% if product.thumbnail %}
 		<div class="col-4">
-			<img src="{{ product.thumbnail.url }}" alt="" />
-			{% endif %}
-			<h4>{{ product.name }}</h4>
+			<a href="{% url 'product-details' product.id %}">
+				<img src="{{ product.thumbnail.url }}" alt="" />
+				{% endif %}
+				<h4>{{ product.name }}</h4>
+			</a>
 			<div class="rating">
 				<i class="fa fa-star"></i>
 				<i class="fa fa-star"></i>

@@ -1,0 +1,129 @@
+{% extends 'base.html' %} {% load static %} {% block meta %}
+
+<title>Checkout - A-Shop| Ecommerce</title>
+{% endblock %} {% block body %}
+<!-- header section start -->
+
+{% include 'partials/navbar.html' %}
+
+<div class="parent">
+	<div class="box">
+		<div class="small-container cart-page">
+			<h1>Order Summary</h1>
+			<table>
+				<tr>
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Subtotal</th>
+				</tr>
+
+				{% for item in items %}
+				<tr>
+					<td>
+						<div class="cart-info">
+							<img src="{{ item.product.thumbnail.url }}" />
+							<div class="">
+								<p>{{ item.product.name }}</p>
+								<small>Price: {{ item.product.price|floatformat:2 }}Taka</small>
+								<a href="#">Remove</a>
+							</div>
+						</div>
+					</td>
+					<td>{{ item.value }}</td>
+					<td>{{ item.get_subtotal }} Taka</td>
+
+					{% endfor %}
+				</tr>
+			</table>
+			<div class="total-price">
+				<table>
+					<tr>
+						<td><strong>Total: {{ order.get_cart_items }}</strong></td>
+
+						<td><strong> {{ order.get_cart_total }} Taka</strong></td>
+					</tr>
+				</table>
+			</div>
+			<a href="{% url 'payment'%}" class="btn pay">Payment</a>
+		</div>
+	</div>
+	<!------------Forms adress------------>
+
+	<div class="box">
+		<form>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">Phone no</label>
+					<input
+						type="text"
+						class="form-control"
+						id="inputEmail4"
+						placeholder="enter your number"
+					/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress">Address</label>
+				<input
+					type="text"
+					class="form-control"
+					id="inputAddress"
+					placeholder="1234 Main St"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress2">Address 2</label>
+				<input
+					type="text"
+					class="form-control"
+					id="inputAddress2"
+					placeholder="Apartment, studio, or floor"
+				/>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputCity">City</label>
+					<input type="text" class="form-control" id="inputCity" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputState">State</label>
+					<select id="inputState" class="form-control">
+						<option selected>Choose...</option>
+						<option>...</option>
+					</select>
+				</div>
+				<div class="form-group col-md-2">
+					<label for="inputZip">Zip</label>
+					<input type="text" class="form-control" id="inputZip" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck" />
+					<label class="form-check-label" for="gridCheck"> Check me out </label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Order In Place</button>
+		</form>
+	</div>
+</div>
+
+<!-- -----------Footer----------- -->
+{% include 'partials/footer.html' %}
+<!-- Js Media Querry start -->
+<script>
+	var menuItems = document.getElementById("menuItems");
+	menuItems.style.maxHeight == "0px";
+
+	function manutoggle() {
+		if (menuItems.style.maxHeight == "0px") {
+			menuItems.style.maxHeight = "200px";
+		} else {
+			menuItems.style.maxHeight = "0px";
+		}
+	}
+</script>
+
+<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+
+{% endblock %}

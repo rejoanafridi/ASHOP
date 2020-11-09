@@ -2,7 +2,11 @@
 
 <title>Cart Info - A-Shop | Ecommerce</title>
 
-{% endblock %} {% block body %}
+{% endblock %}
+<script type="text/javascript">
+	var user = "{{ request.user }}";
+</script>
+{% block body %}
 <!-- header section start -->
 
 {% include 'partials/navbar.html' %}
@@ -16,62 +20,31 @@
 			<th>Quantity</th>
 			<th>Subtotal</th>
 		</tr>
+		{% for item in items %}
 		<tr>
 			<td>
 				<div class="cart-info">
-					<img src="images/buy-1.jpg" alt="" />
+					<img src="{{ item.product.thumbnail.url }}" alt="" />
 					<div class="">
-						<p>Red Printed Shirt</p>
-						<small>Price: $50.00</small>
+						<p>{{ item.product.name }}</p>
+						<small>Price: {{ item.product.price|floatformat:2 }}Taka</small>
 						<a href="#">Remove</a>
 					</div>
 				</div>
 			</td>
-			<td><input type="number" value="1" /></td>
-			<td>$50.00</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="cart-info">
-					<img src="images/buy-2.jpg" alt="" />
-					<div class="">
-						<p>Red Printed Shirt</p>
-						<small>Price: $80.00</small>
-						<a href="#">Remove</a>
-					</div>
-				</div>
-			</td>
-			<td><input type="number" value="1" /></td>
-			<td>$50.00</td>
-		</tr>
-		<tr>
-			<td>
-				<div class="cart-info">
-					<img src="images/buy-3.jpg" alt="" />
-					<div class="">
-						<p>Red Printed Shirt</p>
-						<small>Price: $70.00</small>
-						<a href="#">Remove</a>
-					</div>
-				</div>
-			</td>
-			<td><input type="number" value="1" /></td>
-			<td>$50.00</td>
+			<td><input type="number" value="{{item.value}}" /></td>
+			<td>{{ item.get_subtotal }} Taka</td>
+			{% endfor %}
 		</tr>
 	</table>
 	<div class="total-price">
 		<table>
 			<tr>
-				<td>Subtotal</td>
-				<td>$300.00</td>
-			</tr>
-			<tr>
-				<td>Subtotal</td>
-				<td>$35.00</td>
-			</tr>
-			<tr>
-				<td>Subtotal</td>
-				<td>$344.00</td>
+				<td><strong>Total: {{ order.get_cart_items }}</strong></td>
+				<td>
+					<a href="{% url 'checkOut' %}" class="btn checkout">Checkout</a>
+				</td>
+				<td><strong> {{ order.get_cart_total }} Taka</strong></td>
 			</tr>
 		</table>
 	</div>
@@ -79,3 +52,8 @@
 
 <!-- -----------Footer----------- -->
 {% include 'partials/footer.html' %} {% endblock %}
+ {% block script %}
+
+<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+
+{% endblock %}

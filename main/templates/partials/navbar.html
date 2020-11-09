@@ -15,17 +15,27 @@
 				<li><a href="{% url 'product' %}"> Product</a></li>
 				<li><a href="#"> About </a></li>
 				<li><a href="#"> Contact</a></li>
-				<li><a href="{% url 'account' %}"> Account</a></li>
-			</ul>
-		</nav>
-		<a href="{% url 'cart' %}">
-			<img
-				src=" {% static 'images/cart.png' %} "
+				<li>
+                {% if user.is_authenticated %}
+                   <li> <a href="#">{{ user.username }}</a></li>
+                  <li>
+				   <a href="{% url 'LogOut' %}">Logout</a>
+				  </li> 
+				  
+				  	<a href="{% url 'cart' %}">
+			    <img src=" {% static 'images/cart.png' %} "
 				alt=""
 				width="30px"
-				height="30px"
-			/>
-		</a>
+				height="30px"/>
+		        </a>
+				  
+                {% else %}
+                    <a href="{% url 'login' %}"> Account</a>
+                {% endif %}
+            </li>
+			</ul>
+		</nav>
+		
 		<img
 			src=" {% static 'images/menu.png' %} "
 			class="menu-icon"
