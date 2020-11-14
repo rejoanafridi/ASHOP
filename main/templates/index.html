@@ -81,7 +81,7 @@
 			<div class="col-2">
 				{% if offer.thumbnail %}
 
-				<img src="{% static 'images/exclusive.png'  %} " class="offer-img" />
+				<img src="{% url 'offer.thumbnail.url' %}" class="offer-img" />
 				{% endif %}
 			</div>
 			<div class="col-2">
@@ -89,8 +89,8 @@
 				<h1>{{ offer.title }}</h1>
 				<small> {{ offer.desc }} </small>
 				<a class="btn" href="#">Buy Now &#8594;</a>
-				{% endfor %}
 			</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>
