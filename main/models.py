@@ -59,6 +59,7 @@ class Offer(models.Model):
 
 
 class Order(models.Model):
+
     customer = models.ForeignKey(User,
                                  on_delete=models.SET_NULL,
                                  blank=True,
@@ -84,6 +85,9 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
+
+    CHOICES = [('sm', 'Small'), ('l', 'Large'), ('xl', 'Extra Large'),
+               ('xxl', 'Extra Extra Large')]
     product = models.ForeignKey(Product,
                                 on_delete=models.SET_NULL,
                                 blank=True,
@@ -92,6 +96,7 @@ class OrderItem(models.Model):
                               on_delete=models.SET_NULL,
                               blank=True,
                               null=True)
+    size = models.CharField(max_length=10, choices=CHOICES)
     value = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
 

@@ -40,12 +40,16 @@ def add_cart_item(request):
     if request.method == 'POST':
         prodid = request.POST['prodid']
         qty = request.POST['qty']
+        size = request.POST['size']
         item = Product.objects.get(id=prodid)
         print(request.user)
-        customer = request.user.customer
+        customer = request.user
         order, created = Order.objects.get_or_create(customer=customer,
+                                                     
                                                      complete=False)
-        orderitem = OrderItem(product=item, order=order, value=qty)
+         
+                                           
+        orderitem = OrderItem(product=item, order=order, value=qty,size=size)
         orderitem.save()
         return JsonResponse({'message': 'Success'})
 
