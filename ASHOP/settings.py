@@ -114,8 +114,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 if not DEBUG:
     DEFAULT_FILE_STORAGE = 'ASHOP.storage.AzureMediaStorage'
 
-    AZURE_ACCOUNT_NAME = config('AZURE_ACCOUNT_NAME')
-    AZURE_ACCOUNT_KEY = config('AZURE_ACCOUNT_KEY')
+    AZURE_ACCOUNT_NAME = config('AZURE_ACCOUNT_NAME',default='afridi')
+    AZURE_ACCOUNT_KEY = config('AZURE_ACCOUNT_KEY',default='06611')
 
     MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/media/'
 else:
