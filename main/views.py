@@ -119,6 +119,7 @@ def signup(request):
         name = request.POST['name']
         email = request.POST['email']
         password = request.POST['password']
+        print(name, email, password)
         user = User.objects.create_user(username=name,
                                         email=email,
                                         password=password)
