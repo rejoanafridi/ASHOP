@@ -1,5 +1,7 @@
 import os
+import django_heroku
 from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -115,6 +117,8 @@ STATICFILES_DIRS = [
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+django_heroku.settings(locals())
 
 if not DEBUG:
     DEFAULT_FILE_STORAGE = 'ASHOP.storage.AzureMediaStorage'
